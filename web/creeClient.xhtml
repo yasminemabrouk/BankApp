@@ -12,20 +12,20 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-        Page cree client
+        <h:outputText value="#{msg.creeClient_titre}"/>
         <h:form id="form"  >
 
         <h1>
-             <h:outputText value="fromulaire d'ajout client" />
+             <h:outputText value="#{msg.creeClient_formulaire}" />
         </h1>
             
-        <h:outputText value="Nom: " />
+        <h:outputText value="#{msg.creeClient_nom}" />
 
         <h:inputText id="nom" value="#{indexBean.userInput}" />
         
         <br/>
         <br/>
-        <h:outputText value="Prenom : " />
+        <h:outputText value="#{msg.creeClient_prenom}" />
 
         <h:inputText id="prenom" value="#{indexBean.userInput}" />
 
