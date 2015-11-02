@@ -22,11 +22,6 @@
         <welcome-file>faces/index.xhtml</welcome-file>
     </welcome-file-list>
     
-    <application>
-        <locale-config>
-            <default-locale>fr</default-locale>
-            <supported-locale>en</supported-locale>
-        </locale-config>
-    </application>
+
     
 </web-app>
