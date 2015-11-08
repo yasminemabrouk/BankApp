@@ -9,9 +9,17 @@
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>DisplayMessage</servlet-name>
+        <servlet-class>ch.hearc.ig.odi.customeraccount.Servlet.DisplayMessage</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DisplayMessage</servlet-name>
+        <url-pattern>/DisplayMessage</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -21,7 +29,4 @@
     <welcome-file-list>
         <welcome-file>faces/index.xhtml</welcome-file>
     </welcome-file-list>
-    
-
-    
 </web-app>
