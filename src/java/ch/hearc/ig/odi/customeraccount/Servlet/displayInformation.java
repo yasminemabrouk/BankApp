@@ -43,6 +43,7 @@ public class displayInformation extends HttpServlet {
             out.println("<h1>Servlet DisplayInformations at " + request.getContextPath() + "</h1>");
             out.println("<h1>hello " + request.getParameter("prenom") + "</h1>");
             out.println("<h1>hello " + s.getAttribute("lastname") + "</h1>");
+            
             out.println("<h1>id session :  " + s.getId() + "</h1>");
             out.println("<h1>parametre de web xml :  " + getInitParameter("config") + "</h1>");
             out.println("</body>");

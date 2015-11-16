@@ -7,10 +7,12 @@ package ch.hearc.ig.odi.customeraccount.Servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -39,6 +41,18 @@ public class DisplayMessage extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet DisplayMessage </h1>");
+            HttpSession session = request.getSession();
+            String prenom = (String)session.getAttribute("lastname");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("AskNameToStoreToSession") ;
+            
+		if (prenom!= null) {
+			RequestDispatcher rd = request.getRequestDispatcher("displayInformation");
+			rd.forward(request, response);
+			} else{
+			RequestDispatcher rd = request.getRequestDispatcher("AskNameToStoreToSession");
+			rd.forward(request, response);
+			}
+		
             out.println("</body>");
             out.println("</html>");
         }
