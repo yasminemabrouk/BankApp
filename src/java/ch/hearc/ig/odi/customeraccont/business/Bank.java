@@ -1,11 +1,14 @@
 package ch.hearc.ig.odi.customeraccont.business;
 
 import java.util.*;
-
+import java.util.Map;
+import javax.inject.Inject;
 public class Bank {
+    
+@Inject Services service ;
 
-    Collection<Account> accounts;
-    Collection<Customer> customers;
+    List<Account> accounts;
+    List<Customer> customers;
     private int number;
     private String name;
 
@@ -35,6 +38,22 @@ public class Bank {
         this.name = name;
         this.customers = new ArrayList<>();
         this.accounts = new ArrayList<>();
+    }
+
+//    public List<Customer> getCustomers() {
+//        return service.getCustomersList();
+//    }
+    
+    
+
+    public Map<Integer,Customer> getCustomers() {
+        Map<Integer,Customer> map = new HashMap<Integer,Customer>();
+        Integer i = 0;
+        for (Customer c : service.getCustomersList() ){
+        map.put(i,c);
+        i = i + 1;
+        }
+        return map;
     }
 
     /**
@@ -74,9 +93,12 @@ public class Bank {
      * @param number
      * @param firstName
      * @param lastName
+     * @return  cust
      */
-    public void addCustomer(int number, String firstName, String lastName) {
-        this.customers.add(new Customer(number, firstName, lastName));
+    public  Customer addCustomer(int number, String firstName, String lastName) {
+        Customer cust = new Customer(number, firstName, lastName);
+        this.customers.add(cust);
+        return cust ;
     }
 
     /**
