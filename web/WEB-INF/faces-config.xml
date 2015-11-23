@@ -12,6 +12,32 @@
         <resource-bundle>
             <base-name>ch.hearc.ig.odi.customeraccount.internationalisation.msg</base-name>
             <var>msg</var>
-       </resource-bundle>
+        </resource-bundle>
     </application>
+    <navigation-rule>
+        <from-view-id>creeClient.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{customerCreateBean.addCustomer}</from-action>
+            <from-outcome>saveok</from-outcome>
+            <to-view-id>createCustomerOk.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{customerCreateBean.addCustomer}</from-action>
+            <from-outcome>error</from-outcome>
+            <to-view-id>createCustomerOk.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>customerList</from-outcome>
+            <to-view-id>customerList.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <managed-bean> 
+        <managed-bean-name>customerCreateBean</managed-bean-name>
+        <managed-bean-class>ch.hearc.ig.odi.customeraccont.presentation.bean.CustomerCreateBean</managed-bean-class>
+    </managed-bean>
+    <managed-bean> 
+        <managed-bean-name>customersListBeans</managed-bean-name>
+        <managed-bean-class>ch.hearc.ig.odi.customeraccont.presentation.bean.CustomersListBeans</managed-bean-class>
+    </managed-bean>
 </faces-config>

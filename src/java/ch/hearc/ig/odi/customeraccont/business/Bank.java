@@ -49,7 +49,7 @@ public class Bank {
     public Map<Integer,Customer> getCustomers() {
         Map<Integer,Customer> map = new HashMap<Integer,Customer>();
         Integer i = 0;
-        for (Customer c : service.getCustomersList() ){
+        for (Customer c : customers ){
         map.put(i,c);
         i = i + 1;
         }

@@ -8,7 +8,7 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <f:view >
+   
     <f:loadBundle basename="ch.hearc.ig.odi.customeraccount.internationalisation.msg" var="msg"/>
     <head>
         <title>cree client</title>
@@ -19,30 +19,33 @@ and open the template in the editor.
         <h:form id="form" >
 
         <h1>
-             <h:outputText value="#{msg.creeClient_formulaire}" />
+         <h:outputText value="#{msg.creeClient_formulaire}" />
         </h1>
-        <h:outputText value="#{msg['creeClient_numero']}  " />
+       <h:outputText value="#{msg['creeClient_numero']}  " />
 
-        <h:inputText value="#{CustomerCreateBean.customer.number}" id="number" required="true" requiredMessage="#{msg.userRequired}"/>
+        <h:inputText value="#{customerCreateBean.customer.number}" id="number" required="true" requiredMessage="#{msg.userRequired}"/>
         <h:message for="number" errorClass="errorMessage" />
         <br/>    
         
         <h:outputText value="#{msg['creeClient_nom']}  " />
 
-        <h:inputText value="#{CustomerCreateBean.customer.firstName}"  id="ln" required="true" requiredMessage="#{msg.userRequired}"/>
+        <h:inputText value="#{customerCreateBean.customer.firstName}"  id="ln" required="true" requiredMessage="#{msg.userRequired}"/>
          <h:message for="ln" errorClass="errorMessage" />
        
         <br/>
         <h:outputText value="#{msg['creeClient_prenom']}  " />
 
-        <h:inputText value="#{CustomerCreateBean.customer.lastName}"  id="fn" required="true" requiredMessage="#{msg.userRequired}"/>
+        <h:inputText value="#{customerCreateBean.customer.lastName}"  id="fn" required="true" requiredMessage="#{msg.userRequired}"/>
         
        <h:message for="fn" errorClass="errorMessage" />
        <Br/>
         <br/>
-        <h:commandButton value="Submit"  onclick="#{CustomerCreateBean.addCustomer}"/> 
+        <h:commandButton value="Reset" type="reset" /> 
+        <h:commandButton value="Valider"  action="#{customerCreateBean.addCustomer}"/> 
+        
+        <br/>
+        <h:commandButton value="Annuler" action="customerList"/> 
             
         </h:form>
     </body>
-    </f:view>
 </html>

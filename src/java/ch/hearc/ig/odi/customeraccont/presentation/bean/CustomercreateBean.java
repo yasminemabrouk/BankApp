@@ -3,19 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ch.hearc.ig.odi.customeraccont.business;
+package ch.hearc.ig.odi.customeraccont.presentation.bean;
 
+import ch.hearc.ig.odi.customeraccont.business.Customer;
+import ch.hearc.ig.odi.customeraccont.business.Services;
 import java.io.Serializable;
 import javax.ejb.EJB;
 import javax.ejb.Stateful;
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
 
 /**
  *
  * @author yasmine.mabrouk
  */
-@SessionScoped
-@Stateful
+@RequestScoped
+@Named
 public class CustomercreateBean implements Serializable{
 
     @EJB
@@ -34,8 +38,13 @@ public class CustomercreateBean implements Serializable{
         this.customer = customer;
     }
     
-    public void addCustomer(){
+    public String addCustomer(){
         services.saveCustomer(customer.getNumber(),customer.getFirstName(),customer.getLastName());
+        if (1==1 ){
+            return "saveok";
+        }else{
+            return "error";
+        }
     }
    
    
