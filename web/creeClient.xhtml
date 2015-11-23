@@ -21,20 +21,26 @@ and open the template in the editor.
         <h1>
              <h:outputText value="#{msg.creeClient_formulaire}" />
         </h1>
-            
-        <h:outputText value="#{msg['creeClient_nom']}" />
+        <h:outputText value="#{msg['creeClient_numero']}  " />
 
-        <h:inputText id="nom"  />
+        <h:inputText value="#{CustomerCreateBean.customer.number}" id="number" required="true" requiredMessage="#{msg.userRequired}"/>
+        <h:message for="number" errorClass="errorMessage" />
+        <br/>    
         
-        <br/>
-        <br/>
-        <h:outputText value="#{msg['creeClient_prenom']}" />
+        <h:outputText value="#{msg['creeClient_nom']}  " />
 
-        <h:inputText id="prenom" />
-
-        <Br/>
+        <h:inputText value="#{CustomerCreateBean.customer.firstName}"  id="ln" required="true" requiredMessage="#{msg.userRequired}"/>
+         <h:message for="ln" errorClass="errorMessage" />
+       
         <br/>
-        <h:commandButton value="Submit"  onclick="return check();"/> 
+        <h:outputText value="#{msg['creeClient_prenom']}  " />
+
+        <h:inputText value="#{CustomerCreateBean.customer.lastName}"  id="fn" required="true" requiredMessage="#{msg.userRequired}"/>
+        
+       <h:message for="fn" errorClass="errorMessage" />
+       <Br/>
+        <br/>
+        <h:commandButton value="Submit"  onclick="#{CustomerCreateBean.addCustomer}"/> 
             
         </h:form>
     </body>

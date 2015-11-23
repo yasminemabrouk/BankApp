@@ -15,6 +15,10 @@ public class Customer {
      * @param firstName
      * @param lastName
      */
+    
+    public Customer() {
+    }
+
     public Customer(int number, String firstName, String lastName) {
         this.number = number;
         this.firstName = firstName;

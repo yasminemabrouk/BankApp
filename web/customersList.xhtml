@@ -13,7 +13,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-        <div>List des clients</div>
+        <div><h1>List des clients</h1></div>
        <h:form>
        <h:dataTable id="table1" value="#{Bank.customers}" var="item"
                             border="1">
@@ -36,9 +36,10 @@ and open the template in the editor.
                        <h:outputText value="#{item.lastName}" />
                    </h:column>
             
-            <h:link onclick="http://localhost:8080/CustomerAccount/faces/creeClient.xhtml">
-                <h:commandButton type="button" value="ajouter"  /></h:link> 
+               
             </h:dataTable>
+           <br/>
+            <h:commandButton  value="ajouter" action="creeClient"  />
 
         </h:form>
     </body>
