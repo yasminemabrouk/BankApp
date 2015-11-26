@@ -11,41 +11,41 @@ and open the template in the editor.
    
     <f:loadBundle basename="ch.hearc.ig.odi.customeraccount.internationalisation.msg" var="msg"/>
     <head>
-        <title>cree client</title>
+        <title>Cree client</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-        <h:outputText value="#{msg['creeClient_titre']}"/>
-        <h:form id="form" >
-
-        <h1>
+        <h1><h:outputText value="#{msg['creeClient_titre']}"/></h1>
+    <h:form id="form" >
+         <h1>
          <h:outputText value="#{msg.creeClient_formulaire}" />
         </h1>
        <h:outputText value="#{msg['creeClient_numero']}  " />
+       <h:inputText value="#{customercreateBean.customer.number}" id="number" required="true" requiredMessage="#{msg.userRequired_numero}"/>
+        <h:message for="number" errorClass="errorMessage" style="color: red"/>
+        <br/>  
+              <h:outputText value="#{msg['creeClient_nom']}  " />
 
-        <h:inputText value="#{customerCreateBean.customer.number}" id="number" required="true" requiredMessage="#{msg.userRequired}"/>
-        <h:message for="number" errorClass="errorMessage" />
-        <br/>    
-        
-        <h:outputText value="#{msg['creeClient_nom']}  " />
-
-        <h:inputText value="#{customerCreateBean.customer.firstName}"  id="ln" required="true" requiredMessage="#{msg.userRequired}"/>
-         <h:message for="ln" errorClass="errorMessage" />
+        <h:inputText value="#{customercreateBean.customer.lastName}"  id="ln" required="true" requiredMessage="#{msg.userRequired_nom}"/>
+         <h:message for="ln" errorClass="errorMessage" style="color: red"/>
        
         <br/>
         <h:outputText value="#{msg['creeClient_prenom']}  " />
 
-        <h:inputText value="#{customerCreateBean.customer.lastName}"  id="fn" required="true" requiredMessage="#{msg.userRequired}"/>
+        <h:inputText value="#{customercreateBean.customer.firstName}"  id="fn" required="true" requiredMessage="#{msg.userRequired_prenom}"/>
         
-       <h:message for="fn" errorClass="errorMessage" />
+        <h:message for="fn" errorClass="errorMessage" style="color: red"/>
        <Br/>
+       <h:messages  errorClass="errorMessage" showSummary="true" style="color: red"/> 
         <br/>
         <h:commandButton value="Reset" type="reset" /> 
-        <h:commandButton value="Valider"  action="#{customerCreateBean.addCustomer}"/> 
+        <h:commandButton value="Valider"  action="#{customercreateBean.addCustomer}"/> 
         
-        <br/>
-        <h:commandButton value="Annuler" action="customerList"/> 
-            
+       
+    </h:form>
+         <br/>
+         <h:form>
+        <h:commandButton value="Annuler"  action="customerList"/> 
         </h:form>
     </body>
 </html>

@@ -12,20 +12,21 @@ import javax.ejb.EJB;
 import javax.ejb.Stateful;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
  *
  * @author yasmine.mabrouk
  */
-@RequestScoped
-@Named
+@SessionScoped
+@Named(value="customercreateBean")
 public class CustomercreateBean implements Serializable{
 
-    @EJB
+    @Inject
     private Services services;
     
-    private Customer customer  ;
+    private Customer customer = new Customer()  ;
 
     public CustomercreateBean() {
     }
@@ -40,6 +41,7 @@ public class CustomercreateBean implements Serializable{
     
     public String addCustomer(){
         services.saveCustomer(customer.getNumber(),customer.getFirstName(),customer.getLastName());
+        customer = new Customer();
         if (1==1 ){
             return "saveok";
         }else{
