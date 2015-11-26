@@ -26,10 +26,15 @@ public class Services implements Serializable{
         
         bank.addAccount("1", "Salaire", 0.001, cust);
         bank.addAccount("2", "Impots", 0.002, cust);
+        cust.addAccount("1", "Salaire", 0.001);
+        cust.addAccount("2", "Impots", 0.002);
+        
         
         cust = bank.addCustomer(2, "Marie", "Dupont");
         bank.addAccount("3", "Epargne", 0.002, cust);
         bank.addAccount("4", "Salaire", 0.001, cust);
+        cust.addAccount("3", "Epargne", 0.002);
+        cust.addAccount("4", "Salaire", 0.001);
     }
     
     /**

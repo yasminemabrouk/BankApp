@@ -13,7 +13,11 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
+
+
         <div style="color: green"><h2>#{msg['customerok']} </h2></div>
-         <h:link id="creeClient"  outcome="customersList" >Afficher list clients</h:link>
+        <h:form>
+            <h:commandButton value="#{msg['lndex_listClient']}" action="customerList"/> 
+        </h:form>
     </body>
 </html>

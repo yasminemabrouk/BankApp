@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+       <h:form>
+            <h1>#{msg['Details_compte']}</h1>
+            <table style="width:25%">
+                <tr>  
+                    <td><h:outputText value="#{msg['compte_numero']}" /></td>
+                    <td><h:outputText value="#{compteDetailsBean.account.number}" /></td>
+                </tr>
+                <tr>
+                    <td><h:outputText value="#{msg['compte_nom']}" /></td>
+                    <td><h:outputText value="#{compteDetailsBean.account.name}" /></td>
+                </tr>
+                <tr>
+                    <td><h:outputText value="#{msg['compte_taux']}" /></td>
+                    <td><h:outputText value="#{compteDetailsBean.account.balance}" /></td>
+                </tr>
+                 <tr>  
+                    <td><h:outputText value="#{msg['compte_balance']}" /></td>
+                    <td><h:outputText value="#{compteDetailsBean.account.rate}" /></td>
+                </tr>
+                 
+                
+            </table><br/>
+       <br/>
+       
+       <h:commandButton value="#{msg['retour_au_client']}" action="client"/><br/> 
+       <h:commandButton value="#{msg['acceuil']}" action="acceuil"/> 
+       </h:form>
+    </body>
+</html>

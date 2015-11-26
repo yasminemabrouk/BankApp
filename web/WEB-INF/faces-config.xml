@@ -37,7 +37,42 @@
         </navigation-case>
     </navigation-rule>
     
+     <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>customerList</from-outcome>
+            <to-view-id>customersList.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>acceuil</from-outcome>
+            <to-view-id>index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
     
+    
+    <navigation-rule>
+        <from-view-id>customersList.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Details</from-outcome>
+            <to-view-id>detailsClient.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>detailsClient.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>DetailsCompte</from-outcome>
+            <to-view-id>detailsCompte.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>client
+    
+    <navigation-rule>
+        <from-view-id>detailsCompte.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>client</from-outcome>
+            <to-view-id>detailsClient.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
     
     <managed-bean> 
         <managed-bean-name>customerCreateBean</managed-bean-name>
@@ -46,6 +81,6 @@
     <managed-bean> 
         <managed-bean-name>customersListBeans</managed-bean-name>
         <managed-bean-class>ch.hearc.ig.odi.customeraccont.presentation.bean.CustomersListBeans</managed-bean-class>
-    </managed-bean>
+    </managed-bean>>
     
 </faces-config>

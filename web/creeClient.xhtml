@@ -20,17 +20,17 @@ and open the template in the editor.
          <h1>
          <h:outputText value="#{msg.creeClient_formulaire}" />
         </h1>
-       <h:outputText value="#{msg['creeClient_numero']}  " />
+       <h:outputText value="#{msg['Client_numero']}  " />
        <h:inputText value="#{customercreateBean.customer.number}" id="number" required="true" requiredMessage="#{msg.userRequired_numero}"/>
         <h:message for="number" errorClass="errorMessage" style="color: red"/>
         <br/>  
-              <h:outputText value="#{msg['creeClient_nom']}  " />
+              <h:outputText value="#{msg['Client_nom']}  " />
 
         <h:inputText value="#{customercreateBean.customer.lastName}"  id="ln" required="true" requiredMessage="#{msg.userRequired_nom}"/>
          <h:message for="ln" errorClass="errorMessage" style="color: red"/>
        
         <br/>
-        <h:outputText value="#{msg['creeClient_prenom']}  " />
+        <h:outputText value="#{msg['Client_prenom']}  " />
 
         <h:inputText value="#{customercreateBean.customer.firstName}"  id="fn" required="true" requiredMessage="#{msg.userRequired_prenom}"/>
         
@@ -39,7 +39,7 @@ and open the template in the editor.
        <h:messages  errorClass="errorMessage" showSummary="true" style="color: red"/> 
         <br/>
         <h:commandButton value="Reset" type="reset" /> 
-        <h:commandButton value="Valider"  action="#{customercreateBean.addCustomer}"/> 
+        <h:commandButton value="#{msg['Valider']}"  action="#{customercreateBean.addCustomer}"/> 
         
        
     </h:form>

@@ -2,6 +2,7 @@ package ch.hearc.ig.odi.customeraccont.presentation.bean;
 
 import ch.hearc.ig.odi.customeraccont.business.Customer;
 import ch.hearc.ig.odi.customeraccont.business.Services;
+import ch.hearc.ig.odi.customeraccont.presentation.util.Tool;
 import java.io.Serializable;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
@@ -26,6 +27,10 @@ public class CustomersListBeans implements Serializable {
         return service.getCustomersList();
      
     }
-    
+  public String detailsClient (int num){
+  CustomerDetailsBean b = Tool.findBean("customerDetailsBean", CustomerDetailsBean.class);
+  b.setCustomer(service.getCustomer(num));
+  return "Details";
+  } 
     
 }

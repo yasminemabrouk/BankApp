@@ -25,10 +25,19 @@ public class Customer {
         this.lastName = lastName;
     }
 
+    
+    public ArrayList<Account> getAccounts() {
+        return accounts;
+    }
+
     /**
      *
      * @param number
      */
+    public void setAccounts(ArrayList<Account> accounts) {    
+        this.accounts = accounts;
+    }
+
     public Account getAccountByNumber(String number) {
         int i = 0;
         Account account = null;

@@ -18,6 +18,10 @@ public class Account {
      * @param rate
      * @param customer
      */
+    
+    public Account() {
+    }
+
     public Account(String number, String name, double rate, Customer customer) {
         this.number = number;
         this.name = name;
