@@ -27,10 +27,5 @@ public class CustomersListBeans implements Serializable {
         return service.getCustomersList();
      
     }
-  public String detailsClient (int num){
-  CustomerDetailsBean b = Tool.findBean("customerDetailsBean", CustomerDetailsBean.class);
-  b.setCustomer(service.getCustomer(num));
-  return "Details";
-  } 
     
 }

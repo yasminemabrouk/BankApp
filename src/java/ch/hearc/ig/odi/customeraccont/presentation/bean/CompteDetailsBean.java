@@ -6,6 +6,8 @@
 package ch.hearc.ig.odi.customeraccont.presentation.bean;
 
 import ch.hearc.ig.odi.customeraccont.business.Account;
+import ch.hearc.ig.odi.customeraccont.business.Customer;
+import ch.hearc.ig.odi.customeraccont.presentation.util.Tool;
 import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
@@ -21,6 +23,11 @@ public class CompteDetailsBean  implements Serializable{
 
     public Account getAccount() {
         return account;
+    }
+    public String detailsAccount(Customer cust, Account compte) {
+        setAccount (compte);
+
+        return "DetailsCompte";
     }
 
     public void setAccount(Account account) {
